@@ -1,38 +1,41 @@
-[
-    {
-        "id":1,
-        "N":0,
-        "S":0,
-        "E":0,
-        "W":2,
-        "entry_prompt":"\nYou are in a dank and musty room of stone bricks and wooden supports, with some barrels and crates scattered about, water dripping from the ceiling. You have a feeling you'll see a lot of rooms like this in your immediate future. There are two doorways, the west one with a sign that reads 'TUTORIAL' above it, the north one with a sign that reads 'ADVENTURE.'"
-    },
-    {
-        "id":2,
-        "N":0,
-        "S":0,
-        "E":1,
-        "W":3
-    },
-    {
-        "id":3,
-        "N":4,
-        "S":0,
-        "E":2,
-        "W":1
-    },
-    {
-        "id":4,
-        "N":0,
-        "S":3,
-        "E":5,
-        "W":0
-    },
-    {
-        "id":5,
-        "N":0,
-        "S":2,
-        "E":0,
-        "W":4
-    }
-]
+{ 
+    "rooms": [
+        {
+            "id":1,
+            "N":-1,
+            "S":-1,
+            "E":-1,
+            "W":2,
+            "entry_prompt":"\nYou are in a dank and musty room of stone bricks and wooden supports, with some barrels and crates scattered about, water dripping from the ceiling. You have a feeling you'll see a lot of rooms like this in your immediate future. There are two doorways, the west one with a sign that reads 'TUTORIAL' above it, the north one with a sign that reads 'ADVENTURE.'"
+        },
+        {
+            "id":2,
+            "N":-1,
+            "S":-1,
+            "E":1,
+            "W":3
+        },
+        {
+            "id":3,
+            "N":4,
+            "S":-1,
+            "E":2,
+            "W":1
+        },
+        {
+            "id":4,
+            "N":-1,
+            "S":3,
+            "E":5,
+            "W":-1
+        },
+        {
+            "id":5,
+            "N":-1,
+            "S":2,
+            "E":-1,
+            "W":4
+        }
+    ],
+    "starter":1
+}

@@ -1,6 +1,7 @@
 from classes import *
 from helper import *
 import banner
+import json
 
 
 def initialize_player():
@@ -18,12 +19,34 @@ with a quiver and some arrows, and a staff with a gemstone on top.\n""")
     elif player.playerclass == 2:
         print("You snatch up the bow and strap on the quiver.")
     elif player.playerclass == 3:
-        print("You grab the staff and immediately feel slightly more wizardy.")
+        print("You grab the staff and immediately feel slightly more wizardly.")
     return player
 
 
 def load_map():
-    room_mapping = {}
-    for i in range(1, 6):
-        room_mapping[i] = Room(i)
-    
+    room_file = open("rooms.json", "r")
+    room_data = json.load(room_file)
+    rooms_as_dicts = room_data["rooms"]
+    rooms = {}
+    for rad in rooms_as_dicts:
+        if "entry_prompt" in rad:
+            rooms[rad["id"]] = Room(rad["id"], rad["entry_prompt"])
+        else:
+            rooms[rad["id"]] = Room(rad["id"])
+    for room_id in rooms:
+        curr_room = rooms[room_id]
+        room_dict = rooms_as_dicts[room_id]
+        curr_room.north = room_dict["n"]
+        curr_room.south = room_dict["s"]
+        curr_room.east = room_dict["e"]
+        curr_room.west = room_dict["w"]
+
+    rooms[0] = rooms[room_data["starter"]]
+    return rooms
+
+
+def start_game(player, game_map):
+    current_room = game_map[0]
+    while player.health > 0:
+        print(current_room.entry_prompt)
+        
